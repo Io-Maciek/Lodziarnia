@@ -1,0 +1,252 @@
+﻿@model GodzinyView
+
+<form asp-controller="Edycja" asp-action="Godzin" method="post">
+    @{GodzinyPracy[] m = Model.Godziny.GetAll().ToArray(); }
+    <h3>Poniedziałek</h3>
+    <div class="form-group row">
+
+        <label asp-for="GodzinaStart0" class="col-sm-2 col-form-label"></label>
+        <div class="col-sm-10">
+            <input asp-for="GodzinaStart0" class="form-control" value="@m[0].GodzinaStart" placeholder="@m[0].GodzinaStart">
+            <span class="text-warning" asp-validation-for="GodzinaStart0"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+
+        <label asp-for="MinutaStart0" class="col-sm-2 col-form-label"></label>
+        <div class="col-sm-10">
+            <input asp-for="MinutaStart0" class="form-control" value="@m[0].MinutaStart" placeholder="@m[0].MinutaStart">
+            <span class="text-warning" asp-validation-for="MinutaStart0"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+
+        <label asp-for="GodzinaEnd0" class="col-sm-2 col-form-label"></label>
+        <div class="col-sm-10">
+            <input asp-for="GodzinaEnd0" class="form-control" value="@m[0].GodzinaEnd" placeholder="@m[0].GodzinaEnd">
+            <span class="text-warning" asp-validation-for="GodzinaEnd0"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+
+        <label asp-for="MinutaEnd0" class="col-sm-2 col-form-label"></label>
+        <div class="col-sm-10">
+            <input asp-for="MinutaEnd0" class="form-control" value="@m[0].MinutaEnd" placeholder="@m[0].MinutaEnd">
+            <span class="text-warning" asp-validation-for="MinutaEnd0"></span>
+        </div>
+    </div>
+
+
+
+    <h3>Wtorek</h3>
+    <div class="form-group row">
+
+        <label asp-for="GodzinaStart1" class="col-sm-2 col-form-label"></label>
+        <div class="col-sm-10">
+            <input asp-for="GodzinaStart1" class="form-control" value="@m[1].GodzinaStart" placeholder="@m[1].GodzinaStart">
+            <span class="text-warning" asp-validation-for="GodzinaStart1"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+
+        <label asp-for="MinutaStart1" class="col-sm-2 col-form-label"></label>
+        <div class="col-sm-10">
+            <input asp-for="MinutaStart1" class="form-control" value="@m[1].MinutaStart" placeholder="@m[1].MinutaStart">
+            <span class="text-warning" asp-validation-for="MinutaStart1"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+
+        <label asp-for="GodzinaEnd1" class="col-sm-2 col-form-label"></label>
+        <div class="col-sm-10">
+            <input asp-for="GodzinaEnd1" class="form-control" value="@m[1].GodzinaEnd" placeholder="@m[1].GodzinaEnd">
+            <span class="text-warning" asp-validation-for="GodzinaEnd1"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+
+        <label asp-for="MinutaEnd1" class="col-sm-2 col-form-label"></label>
+        <div class="col-sm-10">
+            <input asp-for="MinutaEnd1" class="form-control" value="@m[1].MinutaEnd" placeholder="@m[1].MinutaEnd">
+            <span class="text-warning" asp-validation-for="MinutaEnd1"></span>
+        </div>
+    </div>
+
+    <h3>Środa</h3>
+    <div class="form-group row">
+
+        <label asp-for="GodzinaStart2" class="col-sm-2 col-form-label"></label>
+        <div class="col-sm-10">
+            <input asp-for="GodzinaStart2" class="form-control" value="@m[2].GodzinaStart" placeholder="@m[2].GodzinaStart">
+            <span class="text-warning" asp-validation-for="GodzinaStart2"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+
+        <label asp-for="MinutaStart2" class="col-sm-2 col-form-label"></label>
+        <div class="col-sm-10">
+            <input asp-for="MinutaStart2" class="form-control" value="@m[2].MinutaStart" placeholder="@m[2].MinutaStart">
+            <span class="text-warning" asp-validation-for="MinutaStart2"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+
+        <label asp-for="GodzinaEnd2" class="col-sm-2 col-form-label"></label>
+        <div class="col-sm-10">
+            <input asp-for="GodzinaEnd2" class="form-control" value="@m[2].GodzinaEnd" placeholder="@m[2].GodzinaEnd">
+            <span class="text-warning" asp-validation-for="GodzinaEnd2"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+
+        <label asp-for="MinutaEnd2" class="col-sm-2 col-form-label"></label>
+        <div class="col-sm-10">
+            <input asp-for="MinutaEnd2" class="form-control" value="@m[2].MinutaEnd" placeholder="@m[2].MinutaEnd">
+            <span class="text-warning" asp-validation-for="MinutaEnd2"></span>
+        </div>
+    </div>
+
+    <h3>Czwartek</h3>
+    <div class="form-group row">
+
+        <label asp-for="GodzinaStart3" class="col-sm-2 col-form-label"></label>
+        <div class="col-sm-10">
+            <input asp-for="GodzinaStart3" class="form-control" value="@m[3].GodzinaStart" placeholder="@m[3].GodzinaStart">
+            <span class="text-warning" asp-validation-for="GodzinaStart3"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+
+        <label asp-for="MinutaStart3" class="col-sm-2 col-form-label"></label>
+        <div class="col-sm-10">
+            <input asp-for="MinutaStart3" class="form-control" value="@m[3].MinutaStart" placeholder="@m[3].MinutaStart">
+            <span class="text-warning" asp-validation-for="MinutaStart3"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+
+        <label asp-for="GodzinaEnd3" class="col-sm-2 col-form-label"></label>
+        <div class="col-sm-10">
+            <input asp-for="GodzinaEnd3" class="form-control" value="@m[0].GodzinaEnd" placeholder="@m[0].GodzinaEnd">
+            <span class="text-warning" asp-validation-for="GodzinaEnd0"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+
+        <label asp-for="MinutaEnd3" class="col-sm-2 col-form-label"></label>
+        <div class="col-sm-10">
+            <input asp-for="MinutaEnd3" class="form-control" value="@m[3].MinutaEnd" placeholder="@m[3].MinutaEnd">
+            <span class="text-warning" asp-validation-for="MinutaEnd3"></span>
+        </div>
+    </div>
+
+    <h3>Piątek</h3>
+    <div class="form-group row">
+
+        <label asp-for="GodzinaStart4" class="col-sm-2 col-form-label"></label>
+        <div class="col-sm-10">
+            <input asp-for="GodzinaStart4" class="form-control" value="@m[4].GodzinaStart" placeholder="@m[4].GodzinaStart">
+            <span class="text-warning" asp-validation-for="GodzinaStart4"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+
+        <label asp-for="MinutaStart4" class="col-sm-2 col-form-label"></label>
+        <div class="col-sm-10">
+            <input asp-for="MinutaStart4" class="form-control" value="@m[4].MinutaStart" placeholder="@m[4].MinutaStart">
+            <span class="text-warning" asp-validation-for="MinutaStart4"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+
+        <label asp-for="GodzinaEnd4" class="col-sm-2 col-form-label"></label>
+        <div class="col-sm-10">
+            <input asp-for="GodzinaEnd4" class="form-control" value="@m[4].GodzinaEnd" placeholder="@m[4].GodzinaEnd">
+            <span class="text-warning" asp-validation-for="GodzinaEnd4"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+
+        <label asp-for="MinutaEnd4" class="col-sm-2 col-form-label"></label>
+        <div class="col-sm-10">
+            <input asp-for="MinutaEnd4" class="form-control" value="@m[4].MinutaEnd" placeholder="@m[4].MinutaEnd">
+            <span class="text-warning" asp-validation-for="MinutaEnd4"></span>
+        </div>
+    </div>
+
+
+    <h3>Sobote</h3>
+    <div class="form-group row">
+
+        <label asp-for="GodzinaStart5" class="col-sm-2 col-form-label"></label>
+        <div class="col-sm-10">
+            <input asp-for="GodzinaStart5" class="form-control" value="@m[5].GodzinaStart" placeholder="@m[5].GodzinaStart">
+            <span class="text-warning" asp-validation-for="GodzinaStart5"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+
+        <label asp-for="MinutaStart5" class="col-sm-2 col-form-label"></label>
+        <div class="col-sm-10">
+            <input asp-for="MinutaStart5" class="form-control" value="@m[5].MinutaStart" placeholder="@m[5].MinutaStart">
+            <span class="text-warning" asp-validation-for="MinutaStart5"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+
+        <label asp-for="GodzinaEnd5" class="col-sm-2 col-form-label"></label>
+        <div class="col-sm-10">
+            <input asp-for="GodzinaEnd5" class="form-control" value="@m[5].GodzinaEnd" placeholder="@m[5].GodzinaEnd">
+            <span class="text-warning" asp-validation-for="GodzinaEnd5"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+
+        <label asp-for="MinutaEnd5" class="col-sm-2 col-form-label"></label>
+        <div class="col-sm-10">
+            <input asp-for="MinutaEnd5" class="form-control" value="@m[5].MinutaEnd" placeholder="@m[5].MinutaEnd">
+            <span class="text-warning" asp-validation-for="MinutaEnd5"></span>
+        </div>
+    </div>
+
+    <h3>Niedziela</h3>
+    <div class="form-group row">
+
+        <label asp-for="GodzinaStart6" class="col-sm-2 col-form-label"></label>
+        <div class="col-sm-10">
+            <input asp-for="GodzinaStart6" class="form-control" value="@m[6].GodzinaStart" placeholder="@m[6].GodzinaStart">
+            <span class="text-warning" asp-validation-for="GodzinaStart6"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+
+        <label asp-for="MinutaStart6" class="col-sm-2 col-form-label"></label>
+        <div class="col-sm-10">
+            <input asp-for="MinutaStart6" class="form-control" value="@m[6].MinutaStart" placeholder="@m[6].MinutaStart">
+            <span class="text-warning" asp-validation-for="MinutaStart6"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+
+        <label asp-for="GodzinaEnd6" class="col-sm-2 col-form-label"></label>
+        <div class="col-sm-10">
+            <input asp-for="GodzinaEnd6" class="form-control" value="@m[6].GodzinaEnd" placeholder="@m[6].GodzinaEnd">
+            <span class="text-warning" asp-validation-for="GodzinaEnd6"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+
+        <label asp-for="MinutaEnd6" class="col-sm-2 col-form-label"></label>
+        <div class="col-sm-10">
+            <input asp-for="MinutaEnd6" class="form-control" value="@m[6].MinutaEnd" placeholder="@m[6].MinutaEnd">
+            <span class="text-warning" asp-validation-for="MinutaEnd6"></span>
+        </div>
+    </div>
+
+
+    <div class="form-group row">
+        <div class="col-sm-10">
+            <button type="submit" class="btn btn-primary">Edytuj</button>
+        </div>
+    </div>
+</form>

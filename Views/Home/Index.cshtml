@@ -1,0 +1,41 @@
+﻿@model Lody_i_Godziny
+
+<div class="text-center">
+    <h1 class="display-4">Witamy</h1>
+</div>
+<div class="row">
+    <div class="col-6">
+        @foreach (var m in Model.Lody)
+        {
+            <div>
+                <h5 style="display:inline">@m.SmakNazwa</h5>
+                <h6 style="display:inline">@m.SmakOpis</h6>
+                <form asp-controller="Edycja" asp-action="Loda" method="get">
+                    <input asp-for="Lody" class="form-control" value="@m" placeholder="@m">
+                    <button type="submit" class="btn btn-primary">Edytuj</button>
+                </form>
+                <br><br />
+            </div>
+        }
+        <a asp-controller="Edycja" asp-action="DodawanieSmaku" class="btn btn-primary">Dodawanie Smaku</a>
+        <a asp-controller="Edycja" asp-action="Godzin" class="btn btn-primary">Edycja godzin</a>
+    </div>
+    <div class="col-6 text-md-center">
+        @foreach (var m in Model.Godziny)
+        {
+            string minutaS = m.MinutaStart.ToString();
+            <h3>@m.DzienID</h3>
+            @if (m.MinutaStart.ToString().Length == 1)
+            {
+                minutaS = "0" + m.MinutaStart.ToString();
+            }
+            <h4>@m.GodzinaStart.ToString() : @minutaS</h4>
+
+        }
+        </div>
+    </div>
+
+
+
+
+
