@@ -35,8 +35,11 @@ namespace Lodziarnia.ViewModel
         public int[]? MinutaEnd = new int[7];
 
         [Display(Name = "Godzina Otwartcia")]
+        [RegularExpression(@"(^[0-1''-'\s]{0,1}[0-9''-'\s]{1}$)|(^[2''-'\s]{1}[0-3''-'\s]{1}$)", ErrorMessage = "Wartości od 0 do 23")]
         public int GodzinaStart0 { get; set; }
         [Display(Name = "Minuta Otwarcia")]
+        [RegularExpression(@"^[0-5''-'\s]{0,1}[0-9]{1}$", ErrorMessage = "Wartości od 0 do 59")]
+
         public int MinutaStart0 { get; set; }
         [Display(Name = "Godzina Zamknięcia")]
         public int GodzinaEnd0 { get; set; }
