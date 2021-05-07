@@ -10,10 +10,7 @@
             <div>
                 <h5 style="display:inline">@m.SmakNazwa</h5>
                 <h6 style="display:inline">@m.SmakOpis</h6>
-                <form asp-controller="Edycja" asp-action="Loda" method="get">
-                    <input asp-for="Lody" class="form-control" value="@m" placeholder="@m">
-                    <button type="submit" class="btn btn-primary">Edytuj</button>
-                </form>
+
                 <br><br />
             </div>
         }
@@ -24,16 +21,47 @@
         @foreach (var m in Model.Godziny)
         {
             string minutaS = m.MinutaStart.ToString();
-            <h3>@m.DzienID</h3>
+            string minutE = m.MinutaEnd.ToString();
             @if (m.MinutaStart.ToString().Length == 1)
             {
                 minutaS = "0" + m.MinutaStart.ToString();
             }
-            <h4>@m.GodzinaStart.ToString() : @minutaS</h4>
+            @if (m.MinutaEnd.ToString().Length == 1)
+            {
+                minutE = "0" + m.MinutaEnd.ToString();
+            }
+            if (m.DzienID == (Dzien)(DateTime.Now.DayOfWeek - 1))
+            {
+                <h3 style="color: darkred">@m.DzienID</h3>
+                if ((DateTime.Now.Hour > m.GodzinaStart || (DateTime.Now.Hour == m.GodzinaStart && DateTime.Now.Minute >= m.MinutaStart))
+                    && (DateTime.Now.Hour<m.GodzinaEnd || (DateTime.Now.Hour == m.GodzinaEnd && DateTime.Now.Minute <= m.MinutaEnd)))
+                {
+                    <h4 style="color: green">
+                        od @m.GodzinaStart.ToString():@minutaS
+                        do @m.GodzinaEnd.ToString():@minutE
+                    </h4><br>
+                }
+                else
+                {
+                    <h4 style="color: red">
+                        od @m.GodzinaStart.ToString():@minutaS
+                        do @m.GodzinaEnd.ToString():@minutE
+                    </h4><br>
+                }
+
+            }
+            else
+            {
+                <h3 style="color: darkblue">@m.DzienID</h3>
+
+                <h4>od @m.GodzinaStart.ToString():@minutaS do @m.GodzinaEnd.ToString():@minutE</h4><br>
+            }
+
+
 
         }
-        </div>
     </div>
+</div>
 
 
 

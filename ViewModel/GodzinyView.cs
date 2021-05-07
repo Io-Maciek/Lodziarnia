@@ -27,6 +27,11 @@ namespace Lodziarnia.ViewModel
 
         }
 
+
+        //      (^[01]{0,1}[0-9]{1}|^2[0-3]{1}):[0-5]{1}[0-9]{1}$
+        //      dla godziny:minuty
+
+
         public IGodzinyPracy? Godziny { get; }
         [RegularExpression(@"^[0-1]\d|2[0-4]$")]
         public int[]? GodzinaStart = new int[7];

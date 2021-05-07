@@ -50,11 +50,11 @@ namespace Lodziarnia.Models
                 );
 
             modelBuilder.Entity<GodzinyPracy>().HasData(
-                new GodzinyPracy { DzienID=Dzien.Poniedzialek, GodzinaStart=0,MinutaStart=0,GodzinaEnd=0,MinutaEnd=0},
+                new GodzinyPracy { DzienID=Dzien.Poniedziałek, GodzinaStart=0,MinutaStart=0,GodzinaEnd=0,MinutaEnd=0},
                 new GodzinyPracy { DzienID = Dzien.Wtorek, GodzinaStart = 0, MinutaStart = 0, GodzinaEnd = 0, MinutaEnd = 0 },
-                new GodzinyPracy { DzienID = Dzien.Sroda, GodzinaStart = 0, MinutaStart = 0, GodzinaEnd = 0, MinutaEnd = 0 },
+                new GodzinyPracy { DzienID = Dzien.Środa, GodzinaStart = 0, MinutaStart = 0, GodzinaEnd = 0, MinutaEnd = 0 },
                 new GodzinyPracy { DzienID = Dzien.Czwartek, GodzinaStart = 0, MinutaStart = 0, GodzinaEnd = 0, MinutaEnd = 0 },
-                new GodzinyPracy { DzienID = Dzien.Piatek, GodzinaStart = 0, MinutaStart = 0, GodzinaEnd = 0, MinutaEnd = 0 },
+                new GodzinyPracy { DzienID = Dzien.Piątek, GodzinaStart = 0, MinutaStart = 0, GodzinaEnd = 0, MinutaEnd = 0 },
                 new GodzinyPracy { DzienID = Dzien.Sobota, GodzinaStart = 0, MinutaStart = 0, GodzinaEnd = 0, MinutaEnd = 0 },
                 new GodzinyPracy { DzienID = Dzien.Niedziela, GodzinaStart = 0, MinutaStart = 0, GodzinaEnd = 0, MinutaEnd = 0 }
                 );

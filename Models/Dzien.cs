@@ -7,11 +7,11 @@ namespace Lodziarnia.Models
 {
     public enum Dzien
     {
-        Poniedzialek,
+        Poniedziałek,
         Wtorek,
-        Sroda,
+        Środa,
         Czwartek,
-        Piatek,
+        Piątek,
         Sobota,
         Niedziela
     }
@@ -20,11 +20,11 @@ namespace Lodziarnia.Models
         public static Dzien ReturnDay(int day)
         {
             day--;
-            if (day == 0) return Dzien.Poniedzialek;
+            if (day == 0) return Dzien.Poniedziałek;
             else if (day == 1) return Dzien.Wtorek;
-            else if (day == 2) return Dzien.Sroda;
+            else if (day == 2) return Dzien.Środa;
             else if (day == 3) return Dzien.Czwartek;
-            else if (day == 4) return Dzien.Piatek;
+            else if (day == 4) return Dzien.Piątek;
             else if (day == 5) return Dzien.Sobota;
             else return Dzien.Niedziela;
         }
