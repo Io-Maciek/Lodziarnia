@@ -18,8 +18,13 @@
         <a asp-controller="Edycja" asp-action="Godzin" class="btn btn-primary">Edycja godzin</a>
     </div>
     <div class="col-6 text-md-center">
-        @foreach (var m in Model.Godziny)
+        @{
+            int i = (int)DateTime.Now.DayOfWeek - 1;
+            int endLoop = i;
+            }
+        @do
         {
+            var m = Model.ReturnHourWork(i);
             string minutaS = m.MinutaStart.ToString();
             string minutE = m.MinutaEnd.ToString();
             @if (m.MinutaStart.ToString().Length == 1)
@@ -32,14 +37,14 @@
             }
             if (m.DzienID == (Dzien)(DateTime.Now.DayOfWeek - 1))
             {
-                <h3 style="color: darkred">@m.DzienID</h3>
+                <h2 style="color: darkred">@m.DzienID</h2>
                 if ((DateTime.Now.Hour > m.GodzinaStart || (DateTime.Now.Hour == m.GodzinaStart && DateTime.Now.Minute >= m.MinutaStart))
-                    && (DateTime.Now.Hour<m.GodzinaEnd || (DateTime.Now.Hour == m.GodzinaEnd && DateTime.Now.Minute <= m.MinutaEnd)))
+                    && (DateTime.Now.Hour < m.GodzinaEnd || (DateTime.Now.Hour == m.GodzinaEnd && DateTime.Now.Minute <= m.MinutaEnd)))
                 {
-                    <h4 style="color: green">
+                    <h3 style="color: green">
                         od @m.GodzinaStart.ToString():@minutaS
                         do @m.GodzinaEnd.ToString():@minutE
-                    </h4><br>
+                    </h3><br>
                 }
                 else
                 {
@@ -56,10 +61,13 @@
 
                 <h4>od @m.GodzinaStart.ToString():@minutaS do @m.GodzinaEnd.ToString():@minutE</h4><br>
             }
-
-
-
-        }
+            i++;
+            if (i > 6)
+            {
+                i = 0;
+            }
+        } while (i != endLoop);
+       
     </div>
 </div>
 

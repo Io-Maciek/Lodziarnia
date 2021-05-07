@@ -10,5 +10,10 @@ namespace Lodziarnia.ViewModel
     {
         public IEnumerable<Lody> Lody { get; set; }
         public IEnumerable<GodzinyPracy> Godziny { get; set; }
+
+        public GodzinyPracy ReturnHourWork(int index)
+        {
+            return Godziny.ToArray()[index];
+        }
     }
 }
